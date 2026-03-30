@@ -27,3 +27,25 @@ lms-rest-api/
 - [ ] All endpoints
 - [ ] PHP cURL consumer application
 - [ ] Postman collections
+
+------------
+
+Created 5 classes :
+ Folder structure + GitHub
+ config/config.php
+ classes/Database.php
+ classes/User.php
+ classes/Course.php
+classes/Assignment.php
+ classes/Submission.php
+classes/Grade.php
+ index.php
+ endpoints/
+ PHP cURL consumer app
+ Postman collections
+
+
+
+
+
+
