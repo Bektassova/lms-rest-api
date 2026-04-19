@@ -75,6 +75,46 @@ lms-rest-api/
 - [ ] PHP cURL consumer application
 - [ ] Postman collections
 
+Progress (Updated)
+[x] Repository created
+
+[x] Folder structure set up
+
+[x] config.php created and protected via .gitignore
+
+[x] classes/Database.php
+
+[x] classes/User.php
+
+[x] classes/Course.php
+
+[x] classes/Assignment.php
+
+[x] classes/Submission.php
+
+[x] classes/Grade.php
+
+[x] index.php entry point
+
+[x] .htaccess routing rules
+
+[x] endpoints/users.php
+
+[x] endpoints/courses.php
+
+[x] endpoints/assignments.php
+
+[x] endpoints/submissions.php
+
+[x] endpoints/grades.php
+
+[x] API tested and working locally (GET, POST, PUT, DELETE verified via Postman)
+
+[x] PHP cURL consumer application (Created test.php and verified data rendering)
+
+[ ] Postman collections (To be exported)
+
+[ ] Ionic mobile application integration
 ## Academic Information
 
 - **Student:** Nurzhamal Bektassova
