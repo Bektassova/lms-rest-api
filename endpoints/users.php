@@ -52,24 +52,28 @@ switch ($method) {
         // Read and decode the JSON request body
         $data = json_decode(file_get_contents('php://input'), true);
 
-        // Validate required fields
-        if (
-            empty($data['username']) ||
-            empty($data['password']) ||
-            empty($data['role'])     ||
-            empty($data['name'])     ||
-            empty($data['surname'])  ||
-            empty($data['email'])
-        ) {
+        try {
+            // Create the new user using the User class method
+            // The validation for existing users happens inside the create() method
+            $new_id = $user->create($data);
+            
+            // If successful, return 201 Created
+            http_response_code(201);
+            echo json_encode([
+                'message' => 'User created successfully',
+                'user_id' => $new_id
+            ]);
+        } catch (Exception $e) {
+            // If the User class throws an Exception (e.g., duplicate email or missing fields)
+            // we catch it here and return a 400 Bad Request
             http_response_code(400);
             echo json_encode([
-                'error'  => 'Missing required fields: username, 
-                             password, role, name, surname, email',
+                'error'  => $e->getMessage(),
                 'status' => 400
             ]);
-            break;
         }
-
+        break;
+        
         // Create the new user and return its ID
         $new_id = $user->create($data);
         http_response_code(201);

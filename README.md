@@ -153,6 +153,24 @@ The project includes a ready-to-use API collection for testing.
 File: /postman-collections/LMS_Final_API.json
 
 How to use: Import this JSON file into your Postman to access all pre-configured requests (GET, POST, PUT, PATCH, DELETE) for Users, Courses, Assignments, and Grades.
+Update: Log of Changes (April 26, 2026)
+Backend API (PHP):
+
+Fixed Authentication Endpoint: Successfully resolved a Fatal Error in auth.php related to database connection type mismatches.
+
+Database Connection Refactoring: Bypassed the inconsistent Database.php class by implementing a direct PDO connection within the auth.php endpoint. This ensures stable communication with the MySQL server in the MAMP environment.
+
+Configuration Fix: Corrected the database name to SchoolManagement and synchronized credentials (root/root).
+
+Successful Integration Test: Verified via Postman that the login method now correctly validates users and returns a full JSON profile (User ID, Role, Name, Email, and Profile Photo path).
+
+Current Status:
+
+Login API: Fully functional (HTTP 200 OK).
+
+Database: Connected and responding to queries.
+
+Next step: Integration of this working API into the Ionic mobile application.
 
 ## Academic Information
 
