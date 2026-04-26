@@ -115,6 +115,45 @@ Progress (Updated)
 [ ] Postman collections (To be exported)
 
 [ ] Ionic mobile application integration
+
+
+Was tested ALL 5 endpoints,and thye  are working perfectly! 
+✅ /users      — returning data
+✅ /courses    — returning data
+✅ /assignments — returning data
+✅ /submissions — returning data
+✅ /grades     — returning data
+
+Progress Update (April 26, 2026)
+API & Database Integration
+Fixed Integrity Constraints: Resolved SQLSTATE[23000] errors by correctly mapping unit_id and lecturer_id in the Assignments table.
+
+Database Logic: Established a clear distinction between Courses (high-level subjects) and Units (specific modules), ensuring all foreign key relationships are valid.
+
+Testing: Verified all core endpoints using Postman:
+
+Users: CRUD operations successful.
+
+Assignments: Linked to specific units and lecturers.
+
+Grades: Implemented partial updates using the PATCH method for the mark field.
+
+Postman Documentation
+Unified Collection: Organized all individual requests into a single, structured collection named LMS_Final_Project.
+
+Folder Hierarchy: Requests are logically grouped into folders: Users, Courses, Assignments, and Grades.
+
+Portable Export: The final API collection is exported and available for testing.
+
+Location: /postman-collections/LMS_Final_API.json
+
+Postman API Collection
+The project includes a ready-to-use API collection for testing.
+
+File: /postman-collections/LMS_Final_API.json
+
+How to use: Import this JSON file into your Postman to access all pre-configured requests (GET, POST, PUT, PATCH, DELETE) for Users, Courses, Assignments, and Grades.
+
 ## Academic Information
 
 - **Student:** Nurzhamal Bektassova
