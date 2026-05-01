@@ -172,6 +172,27 @@ Database: Connected and responding to queries.
 
 Next step: Integration of this working API into the Ionic mobile application.
 
+Recent Progress — May 1st, 2026
+* Frontend & Backend Integration
+Authentication Flow: Successfully linked the Ionic frontend with the PHP backend. The application now performs real-time user verification against the MySQL database.
+
+Dynamic Session Handling: Implemented AuthService to manage user sessions. Upon successful login, user data (ID, Name, Email, Role) is stored locally and persists across the application.
+
+Reactive UI Updates:
+
+Updated Dashboard to display a personalized greeting (e.g., "Welcome, Maxim!") using data fetched from the database.
+
+Enhanced Profile Page to reflect real user information instead of static placeholders.
+
+Logout Logic: Integrated a secure logout function that clears the local session and redirects the user back to the authentication screen.
+
+* Technical Improvements
+Bug Fixes: Resolved issues with case-sensitivity in user roles (Student vs student) by implementing .toLowerCase() checks.
+
+API Communication: Configured HttpClient to handle asynchronous requests to the PHP API, including proper error handling for network or database failures.
+
+Navigation Guarding: Implemented navigateRoot to ensure proper page transitions after successful authentication.
+
 ## Academic Information
 
 - **Student:** Nurzhamal Bektassova
