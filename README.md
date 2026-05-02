@@ -172,7 +172,8 @@ Database: Connected and responding to queries.
 
 Next step: Integration of this working API into the Ionic mobile application.
 
-Recent Progress — May 1st, 2026
+ — May 1st, 2026 Updating:
+Recent Progress
 * Frontend & Backend Integration
 Authentication Flow: Successfully linked the Ionic frontend with the PHP backend. The application now performs real-time user verification against the MySQL database.
 
@@ -192,6 +193,29 @@ Bug Fixes: Resolved issues with case-sensitivity in user roles (Student vs stude
 API Communication: Configured HttpClient to handle asynchronous requests to the PHP API, including proper error handling for network or database failures.
 
 Navigation Guarding: Implemented navigateRoot to ensure proper page transitions after successful authentication.
+
+
+
+Update: May 2, 2026 — Structural Architecture & API Success
+This was a challenging day of debugging. I have finally stabilized the project structure and fixed the data flow after multiple attempts to reorganize the files.
+
+* Structure & Path Resolution (The Big Fix)
+Restoring Project Integrity: I moved get_timetable.php back to its rightful place inside the project folder (lms-rest-api/endpoints/). I realized that moving it to the root htdocs caused more harm than good with broken paths.
+
+* Fixing File Connections: I successfully resolved the require_once issues by using __DIR__. Now the API correctly finds the config.php and database.php files regardless of where the server is running. No more "File not found" errors!
+
+✅ Database & Data Logic
+Smart Query Implementation: I rewrote the SQL logic to be more inclusive. The app now displays both my specific student schedule (ID 27/17) AND general university classes (where user_id is NULL).
+
+Data Cleanup: I manually audited the timetable table in phpMyAdmin, deleting messy duplicate records and fixing those "00:00:00" timestamps that were breaking the UI.
+
+✅ Ionic Integration & Bug Squashing
+Compiler Victory: I fought through the "Application bundle generation failed" errors. By fixing the TypeScript strict mode issues in assignments.page.ts and dashboard.page.ts using proper type casting, I finally got the app to serve.
+
+End-to-End Success: The connection is now solid: MySQL ↔ PHP (in lms-rest-api) ↔ Ionic Frontend.
+
+* Current Status:
+Everything is back in its correct folder. The API is secure, the paths are fixed, and the timetable is displaying real, clean data from the database.
 
 ## Academic Information
 
