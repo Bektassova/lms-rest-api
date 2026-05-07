@@ -150,6 +150,36 @@
             "header": []
           },
           "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"max\",\n    \"password\": \"12345\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8888/lms-rest-api/endpoints/auth.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "lms-rest-api",
+                "endpoints",
+                "auth.php"
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -396,6 +426,65 @@
                 "lms-rest-api",
                 "grades",
                 "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Timetable",
+      "item": [
+        {
+          "name": "Get_Timetable",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/lms-rest-api/endpoints/get_timetable.php?student_id=27",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "lms-rest-api",
+                "endpoints",
+                "get_timetable.php"
+              ],
+              "query": [
+                {
+                  "key": "student_id",
+                  "value": "27"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Timetable for Student 27 (Test Client)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8888/lms-rest-api/endpoints/get_timetable.php?student_id=17",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "lms-rest-api",
+                "endpoints",
+                "get_timetable.php"
+              ],
+              "query": [
+                {
+                  "key": "student_id",
+                  "value": "17"
+                }
               ]
             }
           },
