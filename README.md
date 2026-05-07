@@ -217,6 +217,29 @@ End-to-End Success: The connection is now solid: MySQL ↔ PHP (in lms-rest-api)
 * Current Status:
 Everything is back in its correct folder. The API is secure, the paths are fixed, and the timetable is displaying real, clean data from the database.
 
+
+Update 7 May
+
+##  Step 5: API Consumption via cURL (MCAST Task 2 - Part 3)
+To satisfy the requirements of Part 3, I developed a standalone PHP application that acts as a client.
+
+- **File:** `consume_api_test.php`
+- **Purpose:** This script uses the `curl_init()`, `curl_setopt()`, and `curl_exec()` functions to fetch data from the `get_timetable.php` endpoint.
+- **Functionality:** It converts the JSON response back into a PHP array and displays the student's timetable in a clean, human-readable HTML table. This proves that the API can be consumed by any external PHP system, not just the mobile app.
+
+## Step 6: Advanced API Testing (Postman)
+Following the AA4 requirement, the Postman collections were updated:
+- **Multiple Parameters:** Created separate requests for `student_id=27` (Max) and `student_id=17` (Alim).
+- **Data Integrity:** Verified that the API correctly filters unique schedules (e.g., Alim has an extra English lesson at 08:00 AM while Max starts at 09:00 AM).
+- **Exports:** The final collection is exported as a JSON file and located in the `/postman_collections` folder.
+
+##  Step 7: Professional Documentation (MkDocs)
+To comply with Task 3 (Part 2), I implemented a dedicated documentation website using **MkDocs**.
+
+- **Tooling:** Built with Python and MkDocs.
+- **Content:** The site includes detailed technical specifications for every endpoint, including expected parameters, request methods, and example JSON responses.
+- **Navigation:** Includes "Introduction", "Installation Guide", and "API Endpoints" sections for future developers.
+
 ## Academic Information
 
 - **Student:** Nurzhamal Bektassova
