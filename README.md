@@ -271,6 +271,27 @@ Each request:
 The script can be accessed at:  
 `http://localhost:8888/lms-rest-api/consume_api_test.php`
 
+
+
+
+📱 Mobile Integration (Ionic Framework)
+The documentation and API endpoints in this repository are designed to support the SchoolMSApp mobile application.
+
+Frontend Repository: https://github.com/Bektassova/SchoolMSApp
+
+Integration Status: Fully connected via data.service.ts.
+
+🔄 Recent Updates & Bug Fixes (May 2026)
+To ensure seamless integration between the Ionic Mobile App and this PHP API, the following technical updates were implemented in the frontend:
+
+TypeScript Optimization: Resolved compilation errors (TS2339) in assignments.page.ts and dashboard.page.ts by implementing proper type casting (as any[]) to handle dynamic API responses.
+
+Data Integrity: Refactored data.service.ts to align with the new JSON structure returned by the PHP backend, ensuring consistent data mapping.
+
+Build Stability: Fixed priority type mismatches in the announcements module to ensure a successful production build for Android/iOS.
+
+
+
 ## Academic Information
 
 - **Student:** Nurzhamal Bektassova
