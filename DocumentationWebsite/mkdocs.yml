@@ -1,6 +1,0 @@
-site_name: MyDocs
-
-nav:
-  - Home: index.md
-  - Introduction: introduction.md
-  - Installation: installation.md

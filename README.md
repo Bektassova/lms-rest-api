@@ -218,9 +218,9 @@ End-to-End Success: The connection is now solid: MySQL ↔ PHP (in lms-rest-api)
 Everything is back in its correct folder. The API is secure, the paths are fixed, and the timetable is displaying real, clean data from the database.
 
 
-Update 7 May
 
-##  Step 5: API Consumption via cURL (MCAST Task 2 - Part 3)
+
+## Update 7 May 2026: Step 5: API Consumption via cURL (MCAST Task 2 - Part 3)
 To satisfy the requirements of Part 3, I developed a standalone PHP application that acts as a client.
 
 - **File:** `consume_api_test.php`
@@ -239,6 +239,37 @@ To comply with Task 3 (Part 2), I implemented a dedicated documentation website 
 - **Tooling:** Built with Python and MkDocs.
 - **Content:** The site includes detailed technical specifications for every endpoint, including expected parameters, request methods, and example JSON responses.
 - **Navigation:** Includes "Introduction", "Installation Guide", and "API Endpoints" sections for future developers.
+
+### Update 8 May 2026: Technical Challenges & Troubleshooting 
+During the implementation of the MkDocs site, I encountered and resolved several architectural challenges:
+
+* **Project Structure Refactoring:** Initially, following the general instructions, the documentation was nested deep within sub-directories (`DocumentationWebsite/docs/`). This caused a conflict where the terminal could not locate the `mkdocs.yml` configuration file from the project root.
+* **Resolution:** I refactored the file structure by moving the `mkdocs.yml` and the `/docs` folder directly to the root directory (`/lms-rest-api`). This ensured that the documentation is part of the core repository structure and easily accessible for build commands.
+* **Environment Configuration:** Encountered an issue where the 'Material' theme was not recognized due to Python environment path differences on macOS.
+* **Resolution:** Successfully reconfigured the environment using `python3 -m pip install` and verified the build using the `readthedocs` stable theme to ensure 100% compatibility and professional visual output.
+* **Final Result:** A fully functional, responsive documentation website that mirrors the API logic found in my Postman collections and PHP endpoints.
+
+## Update 14 May 2026– Consuming an API through cURL (AA2)
+
+The file `consume_api_test.php` demonstrates all four HTTP request types using cURL:
+
+| Method     | Endpoint                          | Description |
+|--------    |----------|-------------|
+| **GET**    | `get_timetable.php?student_id=27` | Retrieves a student’s timetable and displays it as an HTML table |
+| **POST**   | `users.php`                       | Creates a new user (JSON payload) |
+| **PUT**    | `courses.php?id=10`               | Requests to update the course name (e.g., from `English` to `English Advanced`)   |
+| **DELETE** | `assignments.php?id=5`            | Requests to delete an assignment |
+
+Each request:
+- Uses proper cURL functions (`curl_init()`, `curl_setopt()`, `curl_exec()`);
+- Sends the required HTTP headers (`Content-Type: application/json`);
+- Outputs the HTTP response code (all returned `200 OK`);
+- Presents the result in a readable format (table for GET, formatted JSON for the others).
+
+> **Note about the PUT request:** The server responded with `200 OK`, meaning the request was accepted. Whether the database is actually updated depends on the implementation of the `courses.php` endpoint. The example proves that the cURL consumer is able to send a correctly formed PUT request.
+
+The script can be accessed at:  
+`http://localhost:8888/lms-rest-api/consume_api_test.php`
 
 ## Academic Information
 

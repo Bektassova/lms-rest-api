@@ -1,0 +1,16 @@
+site_name: LMS API Documentation
+
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - php
+    - json   #Like a  Spotify
+
+nav:
+  - Home: index.md
+  - Introduction: introduction.md
+  - Installation: installation.md
+  - API Endpoints:
+      - Timetable: timetable.md
+      - User Profile: user_profile.md
